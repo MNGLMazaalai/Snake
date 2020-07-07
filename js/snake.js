@@ -44,7 +44,7 @@ window.onload = function () {
     [0, -1],
     [-1, 0],
   ];
-  let direction = 1;
+  let direction = 0;
   function moveSnake() {
     for (let i = 0; i < snakePos.length - 1; i++) {
       const snakeCell = snakePos[i];
@@ -70,6 +70,7 @@ window.onload = function () {
   function checkKey(e) {
     e = e || window.event;
     let cur;
+    if (e.keyCode < 37 || e.keyCode > 40) return;
     if (e.keyCode == '37') {
       cur = 2;
     }
