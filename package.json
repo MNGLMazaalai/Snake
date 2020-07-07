@@ -1,0 +1,27 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "a game for fun",
+  "main": "index.html",
+  "dependencies": {
+    "http-server": "^0.12.3",
+    "pixi.js": "^5.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MNGLMazaalai/Snake.git"
+  },
+  "keywords": [
+    "snake"
+  ],
+  "author": "Mazaalai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MNGLMazaalai/Snake/issues"
+  },
+  "homepage": "https://github.com/MNGLMazaalai/Snake#readme"
+}
