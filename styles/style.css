@@ -1,0 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  margin-left: calc(50% - 300pt);
+  margin-top: calc(50vh - 275pt);
+}
