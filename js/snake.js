@@ -1,21 +1,22 @@
 let app = new PIXI.Application({
-  width: 300,
-  height: 300,
-  resolution: window.devicePixelRatio || 1,
+  width: 600,
+  height: 600,
+  // resolution: window.devicePixelRatio || 1,
 });
 
 document.body.appendChild(app.view);
 const backgroundTexture = PIXI.Texture.from("assets/backgroundCell.jpg");
 const snakeTexture = PIXI.Texture.from("assets/snakeBody.png");
-const foodTexture = PIXI.Texture.from("assets/food.png");
+const foodTexture = PIXI.Texture.from("assets/bunny.png");
 const gameBoard = new PIXI.Container();
 const snake = new PIXI.Container();
 app.stage.addChild(gameBoard);
 app.stage.addChild(snake);
 
-const cellSize = 10,
-  width = 30,
-  height = 30;
+const cellSize = 20,
+  width = app.width / cellSize,
+  height = app.height / cellSize;
+
 for (let i = 0; i < width * height; i++) {
   const boardCell = new PIXI.Sprite(backgroundTexture);
   boardCell.width = cellSize;
@@ -25,7 +26,7 @@ for (let i = 0; i < width * height; i++) {
   gameBoard.addChild(boardCell);
 }
 let snakePos = [];
-for (let j = 0; j < 10; j++) {
+for (let j = 0; j < 15; j++) {
   let curPos = [];
   curPos[0] = width / 2;
   curPos[1] = height / 5 + j;
@@ -75,7 +76,7 @@ function moveSnake() {
   let y = (snakeCell.y + directions[direction][0] * cellSize + mod) % mod;
   if (y == foodPos.y && x == foodPos.x) {
     eaten++;
-    if (eaten % 3 == 0) {
+    if (eaten % 2 == 0) {
       clearInterval(game);
       gameSpd += 0.1;
       game = startGame();
